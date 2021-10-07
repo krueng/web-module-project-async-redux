@@ -23,10 +23,10 @@ const Ayah = (props) => {
 
     return (
         <>
-            <div>
-                <h2>Ayah: {ayah.text}</h2>
+            <div className='center'>
+                <h2>{ayah.text}</h2>
             </div>
-            <button onClick={handleClick}>Get new ayah</button>
+            <button onClick={handleClick}>Get New</button>
         </>
     );
 };

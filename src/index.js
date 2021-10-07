@@ -4,11 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { reducer } from './reducers';
+
+const store = createStore(reducer, applyMiddleware(logger, thunk));
+
+const rootElement = document.getElementById('root');
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Provider>,
+  rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function
